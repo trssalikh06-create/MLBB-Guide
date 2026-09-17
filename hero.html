@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Герой — MLBB Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="nav">
+        <a href="index.html" class="logo">MLBB GUIDE</a>
+
+        <div class="nav-links">
+            <a href="index.html">Герои</a>
+            <a href="items.html">Предметы</a>
+            <a href="profile.html">Профиль</a>
+            <a href="auth.html">Войти</a>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+
+    <div id="heroContainer"></div>
+
+    <section>
+        <h2 class="section-title">Навыки</h2>
+        <div id="skillsContainer" class="skills"></div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Советы по игре</h2>
+        <div id="tipsContainer"></div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Сборки</h2>
+        <div id="buildsContainer"></div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Контрпики</h2>
+        <div id="countersContainer"></div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Комментарии</h2>
+
+        <div id="commentForm" class="profile-box">
+            <textarea
+                id="commentText"
+                placeholder="Ваш комментарий..."
+            ></textarea>
+
+            <br><br>
+
+            <button class="btn" id="commentBtn">
+                Добавить комментарий
+            </button>
+        </div>
+
+        <div id="commentsContainer"></div>
+    </section>
+
+</main>
+
+<script type="module" src="js/hero.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Админ-панель — MLBB Guide</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="nav">
+
+        <a href="index.html" class="logo">
+            MLBB Guide
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Герои
+            </a>
+
+            <a href="items.html">
+                Предметы
+            </a>
+
+            <a href="profile.html">
+                Профиль
+            </a>
+
+            <a href="admin.html">
+                Админка
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <h1>
+        Админ-панель
+    </h1>
+
+    <p id="adminMessage" class="auth-message"></p>
+
+
+    <!-- ========================= -->
+    <!-- ДОБАВЛЕНИЕ ГЕРОЯ -->
+    <!-- ========================= -->
+
+    <section class="admin-box">
+
+        <h2>
+            Добавить героя
+        </h2>
+
+        <form id="heroForm">
+
+            <div class="form-group">
+
+                <label for="heroName">
+                    Название героя
+                </label>
+
+                <input
+                    type="text"
+                    id="heroName"
+                    placeholder="Например: Miya"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="heroImage">
+                    Ссылка на изображение
+                </label>
+
+                <input
+                    type="url"
+                    id="heroImage"
+                    placeholder="https://..."
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="heroRole">
+                    Роль
+                </label>
+
+                <select id="heroRole" required>
+
+                    <option value="">
+                        Выберите роль
+                    </option>
+
+                    <option value="Tank">
+                        Tank
+                    </option>
+
+                    <option value="Fighter">
+                        Fighter
+                    </option>
+
+                    <option value="Assassin">
+                        Assassin
+                    </option>
+
+                    <option value="Mage">
+                        Mage
+                    </option>
+
+                    <option value="Marksman">
+                        Marksman
+                    </option>
+
+                    <option value="Support">
+                        Support
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="heroLane">
+                    Линия
+                </label>
+
+                <select id="heroLane" required>
+
+                    <option value="">
+                        Выберите линию
+                    </option>
+
+                    <option value="EXP Lane">
+                        EXP Lane
+                    </option>
+
+                    <option value="Gold Lane">
+                        Gold Lane
+                    </option>
+
+                    <option value="Mid Lane">
+                        Mid Lane
+                    </option>
+
+                    <option value="Jungle">
+                        Jungle
+                    </option>
+
+                    <option value="Roam">
+                        Roam
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="heroDifficulty">
+                    Сложность героя
+                </label>
+
+                <input
+                    type="number"
+                    id="heroDifficulty"
+                    min="1"
+                    max="10"
+                    step="1"
+                    placeholder="От 1 до 10"
+                    required
+                >
+
+                <small>
+                    Максимальная сложность — 10
+                </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="heroSpecialty">
+                    Специализация
+                </label>
+
+                <input
+                    type="text"
+                    id="heroSpecialty"
+                    placeholder="Например: Burst, Control"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="heroRelease">
+                    Дата выхода
+                </label>
+
+                <input
+                    type="text"
+                    id="heroRelease"
+                    placeholder="Например: 2016-07-19"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="heroDescription">
+                    Краткое описание
+                </label>
+
+                <textarea
+                    id="heroDescription"
+                    rows="5"
+                    placeholder="Краткое описание героя"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="heroLore">
+                    История героя
+                </label>
+
+                <textarea
+                    id="heroLore"
+                    rows="7"
+                    placeholder="История героя"
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn"
+            >
+                Добавить героя
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- УПРАВЛЕНИЕ ГЕРОЯМИ -->
+    <!-- ========================= -->
+
+    <section class="admin-box">
+
+        <h2>
+            Управление героями
+        </h2>
+
+        <div id="heroesList"></div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- ДОБАВЛЕНИЕ ПРЕДМЕТА -->
+    <!-- ========================= -->
+
+    <section class="admin-box">
+
+        <h2>
+            Добавить предмет
+        </h2>
+
+        <form id="itemForm">
+
+            <div class="form-group">
+
+                <label for="itemName">
+                    Название предмета
+                </label>
+
+                <input
+                    type="text"
+                    id="itemName"
+                    placeholder="Например: Blade of Despair"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemImage">
+                    Ссылка на изображение
+                </label>
+
+                <input
+                    type="url"
+                    id="itemImage"
+                    placeholder="https://..."
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemPrice">
+                    Цена
+                </label>
+
+                <input
+                    type="number"
+                    id="itemPrice"
+                    min="0"
+                    placeholder="Например: 3010"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemCategory">
+                    Категория
+                </label>
+
+                <select id="itemCategory" required>
+
+                    <option value="">
+                        Выберите категорию
+                    </option>
+
+                    <option value="Attack">
+                        Attack
+                    </option>
+
+                    <option value="Magic">
+                        Magic
+                    </option>
+
+                    <option value="Defense">
+                        Defense
+                    </option>
+
+                    <option value="Movement">
+                        Movement
+                    </option>
+
+                    <option value="Jungle">
+                        Jungle
+                    </option>
+
+                    <option value="Roam">
+                        Roam
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemDescription">
+                    Описание
+                </label>
+
+                <textarea
+                    id="itemDescription"
+                    rows="5"
+                    placeholder="Описание предмета"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn"
+            >
+                Добавить предмет
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- УПРАВЛЕНИЕ ПРЕДМЕТАМИ -->
+    <!-- ========================= -->
+
+    <section class="admin-box">
+
+        <h2>
+            Управление предметами
+        </h2>
+
+        <div id="itemsList"></div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- ДОБАВЛЕНИЕ СБОРКИ -->
+    <!-- ========================= -->
+
+    <section class="admin-box">
+
+        <h2>
+            Добавить сборку
+        </h2>
+
+        <form id="buildForm">
+
+            <div class="form-group">
+
+                <label for="buildHeroId">
+                    ID героя
+                </label>
+
+                <input
+                    type="text"
+                    id="buildHeroId"
+                    placeholder="ID документа героя из Firestore"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="buildName">
+                    Название сборки
+                </label>
+
+                <input
+                    type="text"
+                    id="buildName"
+                    placeholder="Например: Основная сборка"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="buildDescription">
+                    Описание сборки
+                </label>
+
+                <textarea
+                    id="buildDescription"
+                    rows="5"
+                    placeholder="Описание сборки"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="buildItems">
+                    ID предметов
+                </label>
+
+                <input
+                    type="text"
+                    id="buildItems"
+                    placeholder="id1, id2, id3, id4"
+                    required
+                >
+
+                <small>
+                    Укажите ID предметов через запятую
+                </small>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn"
+            >
+                Добавить сборку
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- УПРАВЛЕНИЕ СБОРКАМИ -->
+    <!-- ========================= -->
+
+    <section class="admin-box">
+
+        <h2>
+            Управление сборками
+        </h2>
+
+        <div id="buildsList"></div>
+
+    </section>
+
+
+</main>
+
+
+<script type="module" src="js/common.js"></script>
+
+<script type="module" src="js/admin.js"></script>
+
+</body>
+
+</html>

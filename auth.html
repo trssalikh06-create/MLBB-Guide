@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Авторизация — MLBB Guide</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="nav">
+
+        <a href="index.html" class="logo">
+            MLBB Guide
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Герои</a>
+            <a href="items.html">Предметы</a>
+            <a href="auth.html" id="authLink">Войти</a>
+            <a href="profile.html" id="profileLink" class="hidden">Профиль</a>
+            <a href="admin.html" id="adminLink" class="hidden">Админка</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <div class="auth-box">
+
+        <h1 id="formTitle">
+            Вход
+        </h1>
+
+
+        <form id="authForm">
+
+            <div id="nameGroup" class="form-group hidden">
+
+                <label for="name">
+                    Имя
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Введите имя"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Введите email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="password">
+                    Пароль
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Введите пароль"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                id="submitBtn"
+                class="btn auth-submit"
+            >
+                Войти
+            </button>
+
+        </form>
+
+
+        <button
+            type="button"
+            id="switchBtn"
+            class="btn btn-secondary auth-button"
+        >
+            Регистрация
+        </button>
+
+
+        <button
+            type="button"ыы
+            id="resetBtn"
+            class="auth-link-button"
+        >
+            Забыли пароль?
+        </button>
+
+
+        <p id="message" class="auth-message"></p>
+
+    </div>
+
+</main>
+
+
+<script type="module" src="js/auth.js"></script>
+
+</body>
+
+</html>

@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Guide — Герои</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="header">
+    <nav class="nav">
+        <a href="index.html" class="logo">MLBB GUIDE</a>
+
+        <div class="nav-links">
+            <a href="index.html">Герои</a>
+            <a href="items.html">Предметы</a>
+            <a href="profile.html">Профиль</a>
+            <a href="auth.html" id="authLink">Войти</a>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="hero-banner">
+        <h1>Mobile Legends: Bang Bang</h1>
+        <p>
+            Информационный справочник по героям, предметам,
+            сборкам, навыкам, контрпику и игровым советам.
+        </p>
+    </section>
+
+    <div class="controls">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Поиск героя..."
+        >
+
+        <select id="roleFilter">
+            <option value="">Все роли</option>
+            <option value="Tank">Tank</option>
+            <option value="Fighter">Fighter</option>
+            <option value="Assassin">Assassin</option>
+            <option value="Mage">Mage</option>
+            <option value="Marksman">Marksman</option>
+            <option value="Support">Support</option>
+        </select>
+
+        <select id="sortSelect">
+            <option value="name">По имени</option>
+            <option value="difficulty">По сложности</option>
+        </select>
+    </div>
+
+    <h2 class="section-title">Герои</h2>
+
+    <div id="heroesContainer" class="cards"></div>
+
+    <div class="pagination">
+        <button class="btn" id="loadMoreBtn">
+            Показать еще
+        </button>
+    </div>
+
+</main>
+
+<footer class="footer">
+    MLBB Guide © 2026
+</footer>
+
+<script type="module" src="js/heroes.js"></script>
+
+</body>
+</html>
