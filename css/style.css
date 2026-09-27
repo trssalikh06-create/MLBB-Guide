@@ -1,0 +1,3272 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(7, 11, 25, 0.88),
+            rgba(7, 11, 25, 0.94)
+        ),
+        url("../images/mlbb-bg.jpg") center top / cover fixed no-repeat;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    width: 100%;
+
+    background: #11182d;
+
+    border-bottom: 1px solid #263152;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.nav {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 18px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+
+    color: #ffb400;
+
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #cbd3e8;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffb400;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 30px 20px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HERO BANNER
+========================================= */
+
+.hero-banner {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #18264c,
+            #10162b
+        );
+
+    border-radius: 16px;
+
+    padding: 40px;
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+}
+
+.hero-banner h1 {
+    margin-bottom: 12px;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+}
+
+.hero-banner p {
+    max-width: 700px;
+
+    color: #b9c2d9;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SEARCH / FILTERS
+========================================= */
+
+.controls {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(160px, 1fr)
+        minmax(160px, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    background: #11182d;
+
+    color: #ffffff;
+
+    border: 1px solid #303b60;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #ffb400;
+}
+
+textarea {
+    resize: vertical;
+
+    min-height: 100px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: #ffb400;
+
+    color: #111;
+
+    font-weight: bold;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #ffc533;
+
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #283454;
+
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background: #35446d;
+}
+
+.btn-danger {
+    background: #b91c1c;
+
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+
+/* =========================================
+   SECTION TITLES
+========================================= */
+
+.section-title {
+    margin: 35px 0 20px;
+
+    font-size: 28px;
+
+    line-height: 1.25;
+}
+
+
+/* =========================================
+   HERO CARDS ON INDEX
+========================================= */
+
+.cards {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(
+                min(240px, 100%),
+                1fr
+            )
+        );
+
+    gap: 20px;
+}
+
+.card {
+    width: 100%;
+    min-width: 0;
+
+    background: #11182d;
+
+    border: 1px solid #293456;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    border-color: #ffb400;
+}
+
+.card-image {
+    display: block;
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+}
+
+.card-content {
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px;
+}
+
+.card-content h3 {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+
+    overflow-wrap: anywhere;
+}
+
+.card-content p {
+    margin-bottom: 12px;
+
+    color: #aeb8d0;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 9px;
+
+    margin: 0 5px 5px 0;
+
+    background: #263354;
+
+    color: #ffca45;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   HERO PAGE
+========================================= */
+
+.hero-container {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto 40px;
+
+    padding: 32px;
+
+    background: #11182d;
+
+    border: 1px solid #293456;
+
+    border-radius: 16px;
+
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* Hero title */
+
+.hero-header {
+    width: 100%;
+
+    margin-bottom: 30px;
+}
+
+.hero-name {
+    margin: 0 0 16px;
+
+    font-size: 44px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    overflow-wrap: anywhere;
+}
+
+.hero-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 16px;
+}
+
+.hero-tags .tag {
+    margin: 0;
+
+    padding: 7px 12px;
+
+    border-radius: 7px;
+
+    background: #263354;
+
+    color: #ffca45;
+
+    font-size: 14px;
+}
+
+.hero-difficulty {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    font-size: 16px;
+
+    color: #d5d9e2;
+}
+
+.difficulty-stars {
+    color: #ffb400;
+
+    font-size: 23px;
+
+    letter-spacing: 3px;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   HERO IMAGE + TEXT
+========================================= */
+
+.hero-content {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        280px
+        minmax(0, 1fr);
+
+    gap: 35px;
+
+    align-items: start;
+}
+
+.hero-image-column {
+    width: 280px;
+
+    min-width: 0;
+}
+
+.hero-image-wrapper {
+    width: 280px;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #0b1020;
+
+    border: 1px solid #293456;
+}
+
+.hero-image {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.hero-text-column {
+    width: 100%;
+
+    min-width: 0;
+}
+
+.hero-text-column h2 {
+    margin: 0 0 12px;
+
+    font-size: 26px;
+
+    line-height: 1.25;
+}
+
+.hero-text-column p {
+    margin: 0;
+
+    color: #cbd3e8;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    overflow-wrap: anywhere;
+}
+
+.hero-summary {
+    margin-bottom: 30px;
+}
+
+.hero-story {
+    margin-bottom: 30px;
+}
+
+.hero-story p {
+    white-space: pre-line;
+}
+
+.hero-text-column .btn {
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skills {
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.skill-card {
+    width: 180px;
+    min-width: 0;
+
+    padding: 15px;
+
+    text-align: center;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.skill-icon {
+    display: block;
+
+    width: 85px;
+
+    height: 85px;
+
+    margin: 0 auto 12px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid
+        rgba(255, 255, 255, 0.25);
+}
+
+.skill-icon-empty {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #263354;
+
+    color: #ffb400;
+
+    font-size: 30px;
+}
+
+.skill-card h3 {
+    margin-bottom: 8px;
+
+    color: #ffb400;
+
+    overflow-wrap: anywhere;
+}
+
+.skill-card p {
+    color: #cbd3e8;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   BUILDS
+========================================= */
+
+.build {
+    width: 100%;
+    min-width: 0;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.build h3 {
+    margin-bottom: 10px;
+
+    overflow-wrap: anywhere;
+}
+
+.build p {
+    color: #cbd3e8;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+.items-row {
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.item-icon {
+    display: block;
+
+    width: 60px;
+
+    height: 60px;
+
+    flex: 0 0 60px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    border: 1px solid #39466c;
+}
+
+
+/* =========================================
+   COUNTERS
+========================================= */
+
+.counter-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(
+                180px,
+                1fr
+            )
+        );
+
+    gap: 20px;
+}
+
+.counter-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.counter-icon {
+    display: block;
+
+    width: 90px;
+
+    height: 90px;
+
+    margin: 0 auto 10px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.counter-card h3 {
+    margin-bottom: 8px;
+
+    overflow-wrap: anywhere;
+}
+
+.counter-card p {
+    color: #cbd3e8;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   COMMENTS
+========================================= */
+
+.comment {
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.comment strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #ffffff;
+
+    overflow-wrap: anywhere;
+}
+
+.comment p {
+    margin: 0;
+
+    color: #cbd3e8;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+.comment small {
+    color: #8894b2;
+}
+
+
+/* =========================================
+   AUTH
+========================================= */
+
+.auth-box {
+    width: 100%;
+    max-width: 450px;
+
+    margin: 70px auto;
+
+    padding: 35px;
+
+    background: #11182d;
+
+    border: 1px solid #293456;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.3);
+}
+
+.auth-box h1 {
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+.form-group {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #cbd3e8;
+
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: #0b1020;
+
+    color: #ffffff;
+
+    border: 1px solid #303b60;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #ffb400;
+}
+
+.auth-submit {
+    width: 100%;
+
+    margin-top: 5px;
+}
+
+.auth-button {
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+.auth-link-button {
+    display: block;
+
+    margin: 18px auto 0;
+
+    background: none;
+
+    border: none;
+
+    color: #ffb400;
+
+    cursor: pointer;
+}
+
+.auth-link-button:hover {
+    color: #ffc533;
+}
+
+.auth-message {
+    min-height: 24px;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    line-height: 1.5;
+}
+
+.auth-message.success {
+    padding: 12px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    color: #4ade80;
+}
+
+.auth-message.error {
+    padding: 12px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    color: #ff6b6b;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-page {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+.profile-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.profile-header h1 {
+    margin-bottom: 6px;
+}
+
+.profile-header p {
+    color: #8995b3;
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+
+    flex: 0 0 90px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb400,
+            #ff6b00
+        );
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #111;
+
+    overflow: hidden;
+}
+
+.profile-avatar img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.profile-box {
+    width: 100%;
+    min-width: 0;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    background: #11182d;
+
+    border: 1px solid #293456;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.profile-box h2 {
+    margin-bottom: 25px;
+}
+
+.history-item {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 10px;
+
+    background: #18213c;
+
+    border-radius: 8px;
+
+    color: #cbd3e8;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   GAME LOGO
+========================================= */
+
+.game-logo {
+    margin-bottom: 25px;
+}
+
+.game-logo span {
+    display: block;
+
+    color: #dbe4ff;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.game-logo strong {
+    display: block;
+
+    color: #ffb400;
+
+    font-size: 36px;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 20px
+        rgba(255, 180, 0, 0.4);
+}
+
+
+/* =========================================
+   ADMIN PANEL
+========================================= */
+
+.admin-box {
+    width: 100%;
+    min-width: 0;
+
+    padding: 25px;
+
+    margin-top: 25px;
+
+    background: #11182d;
+
+    border: 1px solid #293456;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+.admin-box h2 {
+    margin-bottom: 25px;
+}
+
+.admin-box small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #8995b3;
+}
+
+.admin-section {
+    width: 100%;
+
+    margin-bottom: 50px;
+}
+
+.admin-list {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* =========================================
+   ADMIN ITEM
+========================================= */
+
+.admin-item {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.admin-item-info {
+    min-width: 0;
+
+    flex: 1 1 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.admin-item-info img {
+    width: 65px;
+    height: 65px;
+
+    flex: 0 0 65px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 1px solid #39466c;
+}
+
+.admin-item-info > div {
+    min-width: 0;
+}
+
+.admin-item-info strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    overflow-wrap: anywhere;
+}
+
+.admin-item-info span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #8d99b5;
+
+    font-size: 14px;
+
+    overflow-wrap: anywhere;
+}
+
+.admin-item p {
+    margin-top: 8px;
+
+    color: #cbd3e8;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   ADMIN BUTTONS
+========================================= */
+
+.admin-actions {
+    flex: 0 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.admin-card-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.admin-item .btn {
+    margin: 0;
+}
+
+.admin-stars {
+    letter-spacing: 2px;
+
+    color: #ffb400;
+}
+
+
+/* =========================================
+   ADMIN HEADERS / FORMS
+========================================= */
+
+.section-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.form-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   SELECTED ITEMS
+========================================= */
+
+.selected-items {
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.selected-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 7px 10px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    max-width: 100%;
+}
+
+.selected-item img {
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+}
+
+.selected-item button {
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.pagination {
+    width: 100%;
+
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    width: 100%;
+
+    margin-top: 50px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #7e89a7;
+
+    border-top: 1px solid #263152;
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .nav {
+        padding: 16px 20px;
+    }
+
+    .hero-content {
+        grid-template-columns:
+            240px
+            minmax(0, 1fr);
+
+        gap: 25px;
+    }
+
+    .hero-image-column {
+        width: 240px;
+    }
+
+    .hero-image-wrapper {
+        width: 240px;
+        height: 240px;
+    }
+
+    .hero-name {
+        font-size: 38px;
+    }
+
+    .admin-item {
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    .nav {
+        flex-direction: column;
+
+        padding: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 12px 18px;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-banner {
+        padding: 25px;
+    }
+
+    .hero-banner h1 {
+        font-size: 30px;
+    }
+
+    /*
+       Герой:
+       изображение сверху,
+       текст снизу.
+    */
+
+    .hero-content {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+    .hero-image-column {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .hero-image-wrapper {
+        width: min(100%, 300px);
+
+        height: auto;
+
+        aspect-ratio: 1 / 1;
+
+        margin: 0 auto;
+    }
+
+    .hero-text-column {
+        width: 100%;
+    }
+
+    .hero-name {
+        font-size: 32px;
+    }
+
+    .hero-text-column h2 {
+        font-size: 23px;
+    }
+
+    .hero-text-column p {
+        font-size: 15px;
+    }
+
+    .admin-item {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+    }
+
+    .admin-item-info {
+        width: 100%;
+    }
+
+    .admin-actions {
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+    .admin-actions .btn {
+        flex: 1 1 auto;
+    }
+
+    .section-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .comment {
+        flex-direction: column;
+    }
+
+    .profile-header {
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+    .container {
+        padding: 15px 10px;
+    }
+
+    .hero-container {
+        padding: 18px;
+
+        border-radius: 12px;
+    }
+
+    .hero-name {
+        font-size: 28px;
+    }
+
+    .hero-tags {
+        gap: 6px;
+    }
+
+    .hero-tags .tag {
+        padding: 6px 9px;
+
+        font-size: 13px;
+    }
+
+    .hero-difficulty {
+        font-size: 14px;
+    }
+
+    .difficulty-stars {
+        font-size: 19px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero-text-column h2 {
+        font-size: 21px;
+    }
+
+    .hero-text-column p {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .skill-card {
+        width: 100%;
+    }
+
+    .admin-box,
+    .profile-box {
+        padding: 18px;
+    }
+
+    .admin-item {
+        padding: 15px;
+    }
+
+    .admin-item-info {
+        align-items: flex-start;
+    }
+
+    .admin-item-info img {
+        width: 55px;
+        height: 55px;
+
+        flex-basis: 55px;
+    }
+
+    .admin-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .admin-actions .btn {
+        width: 100%;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .form-buttons .btn {
+        width: 100%;
+    }
+
+    .profile-header {
+        flex-direction: column;
+    }
+}
+/* =========================================
+   НОВАЯ ВЕРСТКА СТРАНИЦЫ ГЕРОЯ
+   ========================================= */
+
+.hero-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    background: #121824;
+    border: 1px solid #293456;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+
+.hero-header {
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+
+.hero-name {
+    margin: 0 0 15px;
+    font-size: 42px;
+    line-height: 1.15;
+    color: #ffffff;
+}
+
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+
+.hero-tags .tag {
+    margin: 0;
+}
+
+
+.hero-difficulty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+}
+
+
+.difficulty-stars {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: #ffb400;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   ГЕРОЙ: КАРТИНКА + ТЕКСТ
+   ========================================= */
+
+.hero-body {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+
+.hero-image-wrapper {
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 16px;
+    flex-shrink: 0;
+}
+
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.hero-info {
+    min-width: 0;
+    width: 100%;
+}
+
+
+.hero-summary {
+    margin-bottom: 28px;
+}
+
+
+.hero-story {
+    margin-bottom: 28px;
+}
+
+
+.hero-info h2 {
+    margin: 0 0 10px;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+
+.hero-info p {
+    margin: 0;
+    color: #d5d9e2;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+
+.hero-story p {
+    white-space: pre-line;
+}
+
+
+/* =========================================
+   ЗАГОЛОВОК СЕКЦИИ + КНОПКА
+   ========================================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+.section-header .section-title {
+    margin: 0;
+}
+
+
+/* =========================================
+   НАВЫКИ
+   ========================================= */
+
+/*
+   ВАЖНО:
+   Не flex-wrap в несколько колонок.
+   Теперь каждый навык занимает всю ширину.
+*/
+
+.skills-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+
+.skill-card-wide {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    align-items: start;
+
+    gap: 22px;
+
+    padding: 22px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+.skill-icon-wrapper {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+.skill-icon-large {
+    width: 100px;
+    height: 100px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid rgba(255, 255, 255, 0.25);
+
+    display: block;
+}
+
+
+.skill-content {
+    min-width: 0;
+}
+
+
+.skill-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+.skill-title-row h3 {
+    margin: 0;
+
+    color: #ffb400;
+
+    font-size: 23px;
+
+    line-height: 1.3;
+}
+
+
+.skill-number {
+    display: inline-flex;
+
+    min-width: 34px;
+    height: 34px;
+
+    padding: 0 9px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #263354;
+
+    color: #ffca45;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+
+.skill-ultimate {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 10px;
+
+    border-radius: 7px;
+
+    background: #ffb400;
+
+    color: #111;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+.skill-content p {
+    margin: 0;
+
+    color: #d5d9e2;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   АДМИНСКИЕ КНОПКИ В КАРТОЧКАХ
+   ========================================= */
+
+.admin-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+
+.admin-card-actions .btn {
+    margin: 0;
+}
+
+
+/* =========================================
+   СОВЕТЫ / СБОРКИ
+   ========================================= */
+
+.build {
+    width: 100%;
+    min-width: 0;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+.build h3 {
+    margin-bottom: 10px;
+}
+
+
+.build p {
+    color: #d5d9e2;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+
+.content-row {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+
+.content-row > div:first-child {
+    min-width: 0;
+    flex: 1;
+}
+
+
+/* =========================================
+   ПРЕДМЕТЫ
+   ========================================= */
+
+.items-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+
+.item-icon {
+    width: 60px;
+    height: 60px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 2px solid rgba(255, 255, 255, 0.2);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   КОНТРПИКИ
+   ========================================= */
+
+.counter-card-wide {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+.counter-card-wide > div:first-child {
+    min-width: 0;
+    flex: 1;
+}
+
+
+.counter-card-wide h3 {
+    margin-bottom: 10px;
+
+    color: #ffb400;
+}
+
+
+.counter-card-wide p {
+    color: #d5d9e2;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   ФОРМЫ АДМИНА
+   ========================================= */
+
+.admin-box {
+    width: 100%;
+
+    background: #11182d;
+
+    border: 1px solid #293456;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+}
+
+
+.form-group {
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #cbd3e8;
+
+    font-weight: bold;
+}
+
+
+.checkbox-label {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+
+.checkbox-label input {
+    width: auto;
+}
+
+
+.form-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   КОММЕНТАРИИ
+   ========================================= */
+
+.comment {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    background: #18213c;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+.comment > div:first-child {
+    min-width: 0;
+    flex: 1;
+}
+
+
+.comment strong {
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+
+.comment p {
+    margin: 0;
+
+    color: #d5d9e2;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .hero-container {
+        padding: 24px;
+    }
+
+
+    .hero-body {
+        grid-template-columns: 220px minmax(0, 1fr);
+
+        gap: 22px;
+    }
+
+
+    .hero-image-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+
+
+    .hero-name {
+        font-size: 36px;
+    }
+
+
+    .skill-card-wide {
+        grid-template-columns: 90px minmax(0, 1fr);
+
+        gap: 18px;
+
+        padding: 18px;
+    }
+
+
+    .skill-icon-wrapper,
+    .skill-icon-large {
+        width: 85px;
+        height: 85px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .hero-container {
+        padding: 20px;
+    }
+
+
+    .hero-body {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero-image-wrapper {
+        width: min(100%, 280px);
+
+        height: auto;
+
+        aspect-ratio: 1 / 1;
+
+        margin: 0 auto 20px;
+    }
+
+
+    .hero-name {
+        font-size: 32px;
+    }
+
+
+    .skill-card-wide {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .skill-icon-wrapper {
+        margin: 0 auto;
+    }
+
+
+    .skill-title-row {
+        justify-content: center;
+    }
+
+
+    .skill-content p {
+        text-align: left;
+    }
+
+
+    .admin-card-actions {
+        justify-content: center;
+    }
+
+
+    .content-row {
+        flex-direction: column;
+    }
+
+
+    .counter-card-wide {
+        flex-direction: column;
+    }
+
+
+    .comment {
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .hero-container {
+        padding: 16px;
+    }
+
+
+    .hero-name {
+        font-size: 28px;
+    }
+
+
+    .hero-difficulty {
+        flex-wrap: wrap;
+    }
+
+
+    .difficulty-stars {
+        font-size: 20px;
+    }
+
+
+    .skill-card-wide {
+        padding: 16px;
+    }
+
+
+    .skill-title-row h3 {
+        font-size: 20px;
+    }
+
+
+    .skill-content p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   ITEM PAGE
+========================================= */
+
+.item-detail {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #11182d;
+    border: 1px solid #293456;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+
+.item-header {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+    margin-bottom: 35px;
+}
+
+
+.item-image-box {
+    width: 220px;
+    height: 220px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #18213c;
+    border: 1px solid #39466c;
+}
+
+
+.item-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.item-main-info {
+    min-width: 0;
+}
+
+
+.item-main-info h1 {
+    margin: 0 0 15px;
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+
+.item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.item-price {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #263354;
+    color: #ffca45;
+    font-size: 14px;
+}
+
+
+.item-description {
+    color: #cbd3e8;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   ITEM SECTIONS
+========================================= */
+
+.item-section {
+    margin-top: 30px;
+}
+
+
+.item-section h2 {
+    margin-bottom: 18px;
+    font-size: 26px;
+}
+
+
+/* =========================================
+   ITEM STATS
+========================================= */
+
+.item-stats {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+
+.item-stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 13px 16px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+
+    border-radius: 10px;
+}
+
+
+.item-stat span {
+    color: #cbd3e8;
+}
+
+
+.item-stat strong {
+    color: #65d68a;
+    text-align: right;
+}
+
+
+/* =========================================
+   ITEM PASSIVE / ACTIVE
+========================================= */
+
+.item-ability {
+    padding: 22px;
+
+    border-radius: 12px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+}
+
+
+.item-ability h3 {
+    margin-bottom: 10px;
+    color: #ffb400;
+    font-size: 21px;
+}
+
+
+.item-ability p {
+    color: #cbd3e8;
+    line-height: 1.7;
+}
+
+
+.item-ability.passive {
+    border-left: 4px solid #ffb400;
+}
+
+
+.item-ability.active {
+    border-left: 4px solid #9b7cff;
+}
+
+
+/* =========================================
+   HEROES FOR ITEM
+========================================= */
+
+.item-heroes {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(130px, 1fr));
+
+    gap: 15px;
+}
+
+
+.item-hero-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 12px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+
+    border-radius: 12px;
+
+    transition: 0.2s;
+}
+
+
+.item-hero-card:hover {
+    transform: translateY(-3px);
+    border-color: #ffb400;
+}
+
+
+.item-hero-card img {
+    width: 85px;
+    height: 85px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 10px;
+}
+
+
+.item-hero-card span {
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   ADMIN ITEM FORM
+========================================= */
+
+.item-ability-box {
+    margin-top: 25px;
+    padding: 20px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+
+    border-radius: 12px;
+}
+
+
+.item-ability-box h3 {
+    margin-bottom: 10px;
+    color: #ffb400;
+}
+
+
+.form-help {
+    margin-bottom: 15px;
+    color: #8995b3;
+    line-height: 1.5;
+}
+
+
+.admin-box small,
+.form-group small {
+    color: #8995b3;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .item-detail {
+        padding: 20px;
+    }
+
+
+    .item-header {
+        grid-template-columns: 1fr;
+    }
+
+
+    .item-image-box {
+        width: min(220px, 100%);
+        height: 220px;
+        margin: 0 auto;
+    }
+
+
+    .item-main-info h1 {
+        font-size: 30px;
+    }
+
+
+    .item-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .item-heroes {
+        grid-template-columns:
+            repeat(
+                auto-fill,
+                minmax(110px, 1fr)
+            );
+    }
+
+}
+
+/* =========================================
+   ПРЕДМЕТЫ
+========================================= */
+
+.items-page {
+    width: 100%;
+}
+
+.items-header {
+    margin-bottom: 30px;
+}
+
+.items-header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.items-header p {
+    color: #aeb8d0;
+    line-height: 1.6;
+    max-width: 750px;
+}
+
+.items-controls {
+    margin-bottom: 35px;
+    max-width: 600px;
+}
+
+
+/* СЕКЦИЯ КАТЕГОРИИ */
+
+.items-category-section {
+    margin-bottom: 45px;
+}
+
+.items-category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.items-category-header h2 {
+    font-size: 30px;
+}
+
+.items-category-header span {
+    min-width: 30px;
+    height: 30px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #263354;
+    color: #ffca45;
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+
+/* СЕТКА */
+
+.items-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fill, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+
+/* КАРТОЧКА */
+
+.item-card {
+    min-width: 0;
+    width: 100%;
+
+    background: #11182d;
+
+    border: 1px solid #293456;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.item-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #ffb400;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ИКОНКА */
+
+.item-card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    background: #0b1020;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.item-card-image img {
+    width: 100%;
+    height: 100%;
+
+    max-width: 160px;
+    max-height: 160px;
+
+    object-fit: contain;
+
+    border-radius: 14px;
+
+    display: block;
+}
+
+
+/* КОНТЕНТ */
+
+.item-card-content {
+    padding: 18px;
+}
+
+.item-card-content h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+
+    word-break: break-word;
+}
+
+.item-card-price {
+    color: #ffca45;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.item-card-price span {
+    color: #8995b3;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+
+/* МАЛЕНЬКИЕ ХАРАКТЕРИСТИКИ */
+
+.item-card-stats {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-bottom: 15px;
+}
+
+.item-stat-mini {
+    color: #cbd3e8;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+.item-open-button {
+    width: 100%;
+}
+
+
+/* =========================================
+   МОДАЛЬНОЕ ОКНО
+========================================= */
+
+.item-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.item-modal.hidden {
+    display: none !important;
+}
+
+.item-modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(3, 7, 18, 0.82);
+
+    backdrop-filter: blur(5px);
+}
+
+.item-modal-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    background: #11182d;
+
+    border: 1px solid #303b60;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55);
+}
+
+.item-modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #283454;
+
+    color: white;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.item-modal-close:hover {
+    background: #d93636;
+}
+
+
+/* ВЕРХ МОДАЛКИ */
+
+.item-modal-top {
+    display: grid;
+
+    grid-template-columns:
+        220px minmax(0, 1fr);
+
+    gap: 30px;
+
+    align-items: start;
+
+    margin-bottom: 30px;
+}
+
+.item-modal-image {
+    width: 220px;
+    height: 220px;
+
+    background: #0b1020;
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.item-modal-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+.item-modal-title {
+    min-width: 0;
+
+    padding-top: 10px;
+}
+
+.item-modal-title h2 {
+    font-size: 34px;
+
+    margin-bottom: 10px;
+
+    overflow-wrap: anywhere;
+}
+
+.item-modal-category {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    margin-bottom: 12px;
+
+    background: #263354;
+
+    color: #ffca45;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+}
+
+.item-modal-price {
+    color: #ffb400;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.item-modal-title p {
+    color: #cbd3e8;
+
+    line-height: 1.7;
+
+    white-space: pre-line;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* СЕКЦИИ */
+
+.item-modal-section {
+    margin-top: 25px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #293456;
+}
+
+.item-modal-section h3 {
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ХАРАКТЕРИСТИКИ */
+
+.item-stats-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 10px;
+}
+
+.item-stat {
+    padding: 12px 15px;
+
+    background: #18213c;
+
+    border-radius: 9px;
+
+    color: #dce3f5;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ПАССИВКА / АКТИВКА */
+
+.item-ability {
+    padding: 20px;
+
+    margin-top: 15px;
+
+    border-radius: 12px;
+
+    background: #18213c;
+
+    border: 1px solid #293456;
+}
+
+.item-ability h3 {
+    color: #ffb400;
+
+    margin-bottom: 8px;
+}
+
+.item-ability p {
+    color: #d3daea;
+
+    line-height: 1.65;
+
+    white-space: pre-line;
+
+    overflow-wrap: anywhere;
+}
+
+.ability-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: #8995b3;
+
+    letter-spacing: 1px;
+}
+
+.active-ability {
+    border-color: #6b4f1d;
+}
+
+
+/* ГЕРОИ */
+
+.item-heroes-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.item-hero {
+    width: 95px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px;
+
+    background: #18213c;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.item-hero:hover {
+    background: #263354;
+
+    transform: translateY(-2px);
+}
+
+.item-hero img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid #39466c;
+}
+
+.item-hero span {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #dce3f5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ЗАПРЕТ ПРОКРУТКИ ФОНА */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* АДАПТИВ */
+
+@media (max-width: 700px) {
+
+    .items-header h1 {
+        font-size: 32px;
+    }
+
+    .items-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .item-modal {
+        padding: 10px;
+    }
+
+    .item-modal-content {
+        max-height: 95vh;
+
+        padding: 20px;
+    }
+
+    .item-modal-top {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .item-modal-image {
+        width: 180px;
+        height: 180px;
+
+        margin: 0 auto;
+    }
+
+    .item-modal-title {
+        text-align: center;
+    }
+
+    .item-modal-title h2 {
+        font-size: 27px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .item-modal-content {
+        padding: 16px;
+    }
+
+}
