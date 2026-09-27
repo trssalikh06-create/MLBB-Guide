@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Предметы — MLBB Guide</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <nav class="nav">
+
+        <a href="index.html" class="logo">
+            MLBB GUIDE
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Герои
+            </a>
+
+            <a href="items.html">
+                Предметы
+            </a>
+
+            <a href="profile.html">
+                Профиль
+            </a>
+
+            <a href="auth.html" id="authLink">
+                Войти
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main class="container">
+
+    <section class="items-page">
+
+        <div class="items-header">
+
+            <h1>
+                Предметы
+            </h1>
+
+            <p>
+                Предметы Mobile Legends: Bang Bang,
+                их характеристики, пассивные и активные способности.
+            </p>
+
+        </div>
+
+
+        <div class="items-controls">
+
+            <input
+                type="text"
+                id="itemSearch"
+                placeholder="Поиск предмета..."
+            >
+
+        </div>
+
+
+        <div id="itemsContainer"></div>
+
+    </section>
+
+</main>
+
+
+<!-- МОДАЛЬНОЕ ОКНО -->
+
+<div
+    id="itemModal"
+    class="item-modal hidden"
+>
+
+    <div class="item-modal-overlay"></div>
+
+    <div class="item-modal-content">
+
+        <button
+            id="closeItemModal"
+            class="item-modal-close"
+        >
+            ×
+        </button>
+
+
+        <div id="itemModalBody"></div>
+
+    </div>
+
+</div>
+
+
+<footer class="footer">
+
+    MLBB Guide © 2026
+
+</footer>
+
+
+<script type="module" src="js/common.js"></script>
+<script type="module" src="js/items.js"></script>
+
+</body>
+
+</html>

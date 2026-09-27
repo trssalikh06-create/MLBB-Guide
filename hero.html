@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Герой — MLBB Guide</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <nav class="nav">
+
+        <a href="index.html" class="logo">
+            MLBB GUIDE
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Герои
+            </a>
+
+            <a href="items.html">
+                Предметы
+            </a>
+
+            <a href="profile.html">
+                Профиль
+            </a>
+
+            <a href="auth.html">
+                Войти
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main class="container">
+
+    <div id="heroContainer"></div>
+
+
+    <!-- ============================= -->
+    <!-- НАВЫКИ -->
+    <!-- ============================= -->
+
+    <section>
+
+        <div class="section-header">
+
+            <h2 class="section-title">
+                Навыки
+            </h2>
+
+            <button
+                class="btn hidden"
+                id="addSkillButton"
+            >
+                Добавить навык
+            </button>
+
+        </div>
+
+
+        <div
+            id="skillFormContainer"
+            class="admin-box hidden"
+        >
+
+            <h2 id="skillFormTitle">
+                Добавить навык
+            </h2>
+
+            <form id="skillForm">
+
+                <input
+                    type="hidden"
+                    id="skillEditId"
+                >
+
+                <div class="form-group">
+
+                    <label>
+                        Название навыка
+                    </label>
+
+                    <input
+                        type="text"
+                        id="skillName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Номер / тип навыка
+                    </label>
+
+                    <select id="skillType">
+
+                        <option value="passive">
+                            Пассивный
+                        </option>
+
+                        <option value="1">
+                            1
+                        </option>
+
+                        <option value="2">
+                            2
+                        </option>
+
+                        <option value="3">
+                            3
+                        </option>
+
+                        <option value="4">
+                            4
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="skillUltimate"
+                        >
+
+                        Ультимейт
+
+                    </label>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Изображение навыка
+                    </label>
+
+                    <input
+                        type="url"
+                        id="skillImage"
+                        placeholder="https://..."
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Описание
+                    </label>
+
+                    <textarea
+                        id="skillDescription"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Сохранить
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="skillCancel"
+                    >
+                        Отмена
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <div id="skillsContainer" class="skills-list"></div>
+
+    </section>
+
+
+
+    <!-- ============================= -->
+    <!-- СОВЕТЫ -->
+    <!-- ============================= -->
+
+    <section>
+
+        <div class="section-header">
+
+            <h2 class="section-title">
+                Советы по игре
+            </h2>
+
+            <button
+                class="btn hidden"
+                id="addTipButton"
+            >
+                Добавить совет
+            </button>
+
+        </div>
+
+
+        <div
+            id="tipFormContainer"
+            class="admin-box hidden"
+        >
+
+            <h2 id="tipFormTitle">
+                Добавить совет
+            </h2>
+
+            <form id="tipForm">
+
+                <input
+                    type="hidden"
+                    id="tipEditId"
+                >
+
+                <div class="form-group">
+
+                    <label>
+                        Совет
+                    </label>
+
+                    <textarea
+                        id="tipText"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Сохранить
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="tipCancel"
+                    >
+                        Отмена
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <div id="tipsContainer"></div>
+
+    </section>
+
+
+
+    <!-- ============================= -->
+    <!-- СБОРКИ -->
+    <!-- ============================= -->
+
+    <section>
+
+        <div class="section-header">
+
+            <h2 class="section-title">
+                Сборки
+            </h2>
+
+            <button
+                class="btn hidden"
+                id="addBuildButton"
+            >
+                Добавить сборку
+            </button>
+
+        </div>
+
+
+        <div
+            id="buildFormContainer"
+            class="admin-box hidden"
+        >
+
+            <h2 id="buildFormTitle">
+                Добавить сборку
+            </h2>
+
+
+            <form id="buildForm">
+
+                <input
+                    type="hidden"
+                    id="buildEditId"
+                >
+
+
+                <div class="form-group">
+
+                    <label>
+                        Название сборки
+                    </label>
+
+                    <input
+                        type="text"
+                        id="buildName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Описание
+                    </label>
+
+                    <textarea
+                        id="buildDescription"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Предметы
+                    </label>
+
+                    <select
+                        id="buildItems"
+                        multiple
+                    ></select>
+
+                    <small>
+                        Чтобы выбрать несколько предметов, удерживайте Ctrl.
+                    </small>
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Сохранить
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="buildCancel"
+                    >
+                        Отмена
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <div id="buildsContainer"></div>
+
+    </section>
+
+
+
+    <!-- ============================= -->
+    <!-- КОНТРПИКИ -->
+    <!-- ============================= -->
+
+    <section>
+
+        <div class="section-header">
+
+            <h2 class="section-title">
+                Контрпики
+            </h2>
+
+            <button
+                class="btn hidden"
+                id="addCounterButton"
+            >
+                Добавить контрпик
+            </button>
+
+        </div>
+
+
+        <div
+            id="counterFormContainer"
+            class="admin-box hidden"
+        >
+
+            <h2 id="counterFormTitle">
+                Добавить контрпик
+            </h2>
+
+
+            <form id="counterForm">
+
+                <input
+                    type="hidden"
+                    id="counterEditId"
+                >
+
+
+                <div class="form-group">
+
+                    <label>
+                        Герой-контрпик
+                    </label>
+
+                    <select
+                        id="counterHeroId"
+                        required
+                    ></select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Почему этот герой является контрпиком
+                    </label>
+
+                    <textarea
+                        id="counterReason"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Сохранить
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="counterCancel"
+                    >
+                        Отмена
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <div id="countersContainer"></div>
+
+    </section>
+
+
+
+    <!-- ============================= -->
+    <!-- КОММЕНТАРИИ -->
+    <!-- ============================= -->
+
+    <section>
+
+        <h2 class="section-title">
+            Комментарии
+        </h2>
+
+
+        <div
+            id="commentForm"
+            class="profile-box"
+        >
+
+            <textarea
+                id="commentText"
+                placeholder="Ваш комментарий..."
+            ></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                id="commentBtn"
+            >
+                Добавить комментарий
+            </button>
+
+        </div>
+
+
+        <div id="commentsContainer"></div>
+
+    </section>
+
+</main>
+
+
+<script type="module" src="js/common.js"></script>
+<script type="module" src="js/hero.js"></script>
+
+</body>
+
+</html>

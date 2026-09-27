@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Админ-панель — MLBB Guide</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+<header class="header">
+
+    <nav class="nav">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            MLBB GUIDE
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Герои
+            </a>
+
+            <a href="items.html">
+                Предметы
+            </a>
+
+            <a href="profile.html">
+                Профиль
+            </a>
+
+            <a href="admin.html">
+                Админка
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main class="container">
+
+    <section class="hero-banner">
+
+        <h1>
+            Панель администратора
+        </h1>
+
+        <p>
+            Управление героями и предметами MLBB Guide.
+        </p>
+
+    </section>
+
+
+    <div
+        id="adminMessage"
+        class="auth-message"
+    ></div>
+
+
+    <!-- =========================
+         ГЕРОИ
+    ========================== -->
+
+    <section class="admin-section">
+
+        <h2 class="section-title">
+            Добавить героя
+        </h2>
+
+
+        <form
+            id="heroForm"
+            class="profile-box"
+        >
+
+            <input
+                type="hidden"
+                id="heroEditId"
+            >
+
+
+            <label>
+                Имя героя
+            </label>
+
+            <input
+                type="text"
+                id="heroName"
+                required
+            >
+
+
+            <label>
+                URL изображения
+            </label>
+
+            <input
+                type="url"
+                id="heroImage"
+                placeholder="https://..."
+                required
+            >
+
+
+            <label>
+                Роль
+            </label>
+
+            <select
+                id="heroRole"
+                required
+            >
+                <option value="">
+                    Выберите роль
+                </option>
+
+                <option value="Tank">
+                    Tank
+                </option>
+
+                <option value="Fighter">
+                    Fighter
+                </option>
+
+                <option value="Assassin">
+                    Assassin
+                </option>
+
+                <option value="Mage">
+                    Mage
+                </option>
+
+                <option value="Marksman">
+                    Marksman
+                </option>
+
+                <option value="Support">
+                    Support
+                </option>
+            </select>
+
+
+            <label>
+                Линия
+            </label>
+
+            <select
+                id="heroLane"
+                required
+            >
+
+                <option value="">
+                    Выберите линию
+                </option>
+
+                <option value="EXP Lane">
+                    EXP Lane
+                </option>
+
+                <option value="Gold Lane">
+                    Gold Lane
+                </option>
+
+                <option value="Mid Lane">
+                    Mid Lane
+                </option>
+
+                <option value="Jungle">
+                    Jungle
+                </option>
+
+                <option value="Roam">
+                    Roam
+                </option>
+
+            </select>
+
+
+            <label>
+                Сложность
+            </label>
+
+            <select
+                id="heroDifficulty"
+                required
+            >
+
+                <option value="1">
+                    ★☆☆☆☆
+                </option>
+
+                <option value="2">
+                    ★★☆☆☆
+                </option>
+
+                <option value="3">
+                    ★★★☆☆
+                </option>
+
+                <option value="4">
+                    ★★★★☆
+                </option>
+
+                <option value="5">
+                    ★★★★★
+                </option>
+
+            </select>
+
+
+            <label>
+                Специализация
+            </label>
+
+            <input
+                type="text"
+                id="heroSpecialty"
+                placeholder="Burst, Control, Reap..."
+            >
+
+
+            <label>
+                Дата выхода
+            </label>
+
+            <input
+                type="text"
+                id="heroRelease"
+                placeholder="Например: 2016"
+            >
+
+
+            <label>
+                Краткое описание
+            </label>
+
+            <textarea
+                id="heroDescription"
+                rows="4"
+                required
+            ></textarea>
+
+
+            <label>
+                История героя
+            </label>
+
+            <textarea
+                id="heroLore"
+                rows="7"
+            ></textarea>
+
+
+            <div class="form-buttons">
+
+                <button
+                    type="submit"
+                    class="btn"
+                    id="heroSubmit"
+                >
+                    Добавить героя
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="heroCancel"
+                    style="display:none;"
+                >
+                    Отмена
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <section class="admin-section">
+
+        <h2 class="section-title">
+            Герои
+        </h2>
+
+        <div
+            id="heroesList"
+            class="admin-list"
+        ></div>
+
+    </section>
+
+
+<section class="admin-section">
+
+    <div class="admin-box">
+
+        <h2>
+            Управление предметами
+        </h2>
+
+
+        <form id="itemForm">
+
+            <input
+                type="hidden"
+                id="itemEditId"
+            >
+
+
+            <div class="form-group">
+
+                <label for="itemName">
+                    Название предмета
+                </label>
+
+                <input
+                    type="text"
+                    id="itemName"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemImage">
+                    URL изображения
+                </label>
+
+                <input
+                    type="text"
+                    id="itemImage"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemPrice">
+                    Цена
+                </label>
+
+                <input
+                    type="number"
+                    id="itemPrice"
+                    min="0"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemCategory">
+                    Категория
+                </label>
+
+                <select
+                    id="itemCategory"
+                    required
+                >
+
+                    <option value="">
+                        Выберите категорию
+                    </option>
+
+                    <option value="Attack">
+                        Атака
+                    </option>
+
+                    <option value="Magic">
+                        Магия
+                    </option>
+
+                    <option value="Defense">
+                        Защита
+                    </option>
+
+                    <option value="Movement">
+                        Передвижение
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemDescription">
+                    Описание
+                </label>
+
+                <textarea
+                    id="itemDescription"
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemStats">
+
+                    Характеристики
+
+                </label>
+
+                <textarea
+                    id="itemStats"
+                    rows="5"
+                    placeholder="920+ к ОЗ&#10;40+ физическая защита&#10;+4 регенерация ОЗ"
+                ></textarea>
+
+                <small>
+                    Каждая характеристика с новой строки.
+                </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemPassiveName">
+
+                    Название пассивки
+
+                </label>
+
+                <input
+                    type="text"
+                    id="itemPassiveName"
+                    placeholder="Например: Уникальная пассивка"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemPassiveDescription">
+
+                    Описание пассивки
+
+                </label>
+
+                <textarea
+                    id="itemPassiveDescription"
+                    rows="5"
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemActiveName">
+
+                    Название активной способности
+
+                </label>
+
+                <input
+                    type="text"
+                    id="itemActiveName"
+                    placeholder="Оставьте пустым, если активной способности нет"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemActiveDescription">
+
+                    Описание активной способности
+
+                </label>
+
+                <textarea
+                    id="itemActiveDescription"
+                    rows="5"
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemRecommendedHeroes">
+
+                    Рекомендуется для героев
+
+                </label>
+
+                <select
+                    id="itemRecommendedHeroes"
+                    multiple
+                    size="7"
+                ></select>
+
+                <small>
+                    Можно выбрать нескольких героев.
+                    Ctrl + клик — несколько вариантов.
+                </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="itemCounterHeroes">
+
+                    Полезен против героев
+
+                </label>
+
+                <select
+                    id="itemCounterHeroes"
+                    multiple
+                    size="7"
+                ></select>
+
+                <small>
+                    Можно выбрать нескольких героев.
+                </small>
+
+            </div>
+
+
+            <div class="form-buttons">
+
+                <button
+                    type="submit"
+                    class="btn"
+                    id="itemSubmit"
+                >
+                    Добавить предмет
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="itemCancel"
+                    style="display:none;"
+                >
+                    Отмена
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="admin-box">
+
+        <h2>
+            Список предметов
+        </h2>
+
+        <div id="itemsList"></div>
+
+    </div>
+
+</section>
+
+
+<section class="admin-section">
+
+    <div class="admin-box">
+
+        <h2>Список предметов</h2>
+
+        <div id="itemsList"></div>
+
+    </div>
+
+</section>
+
+<div class="form-group">
+
+    <label for="itemRecommendedHeroes">
+        Рекомендуется для героев
+    </label>
+
+    <select
+        id="itemRecommendedHeroes"
+        multiple
+        size="8"
+    ></select>
+
+    <small>
+        Можно выбрать нескольких героев.
+        Используйте Ctrl + клик.
+    </small>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="itemCounterHeroes">
+        Собирать против героев
+    </label>
+
+    <select
+        id="itemCounterHeroes"
+        multiple
+        size="8"
+    ></select>
+
+    <small>
+        Можно выбрать нескольких героев.
+        Используйте Ctrl + клик.
+    </small>
+
+</div>
+
+<footer class="footer">
+    MLBB Guide © 2026
+</footer>
+
+
+<script
+    type="module"
+    src="js/common.js"
+></script>
+
+<script
+    type="module"
+    src="js/admin.js"
+></script>
+
+</body>
+
+</html>
